@@ -3,3 +3,5 @@
 /keyrings/live/secring.gpg
 /test1.txt
 /test2.txt
+**/__pycache__*
+**/.blackbox*
