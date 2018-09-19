@@ -5,5 +5,5 @@ setup(
     version='0.1dev',
     packages=['blackbox',],
     license='Apachev2.0',
-    long_description=open('README.txt').read(),
+    long_description=open('ReadMe.md').read(),
 )
