@@ -208,9 +208,15 @@ class KeyStore():
         err = None
         for line in proc.stdout:
             if out:
-                out = "{}\n{}".format(out, line)
+                if type(line) is str:
+                    out = "{}\n{}".format(out, line)
+                else:
+                    out = "{}\n{}".format(out, line.decode())
             else:
-                out = line
+                if type(line) is str:
+                    out = line
+                else:
+                    out = line.decode()
         for line in proc.stderr:
             if err:
                 err = "{}\n{}".format(out, line)
