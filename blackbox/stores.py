@@ -192,7 +192,7 @@ class KeyStore():
         return {'stdout': out, 'stderr': err, 'code': proc.returncode}
 
 
-    def cat_file(self, fname):
+    def cat_file(self, fname, add_new_line=False):
         """
         Save a file to blackbox
 
@@ -209,9 +209,13 @@ class KeyStore():
         for line in proc.stdout:
             if out:
                 if type(line) is str:
-                    out = "{}\n{}".format(out, line)
+                    uline = line
                 else:
-                    out = "{}\n{}".format(out, line.decode())
+                    uline = line.decode()
+                if add_new_line:
+                    out = "{}\n{}".format(out, uline)
+                else:
+                    out = "{}{}".format(out, uline)
             else:
                 if type(line) is str:
                     out = line
