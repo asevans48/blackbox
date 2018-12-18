@@ -8,3 +8,4 @@
 **/.blackbox*
 **dev.tar.gz*
 **/.idea*
+**/venv**
