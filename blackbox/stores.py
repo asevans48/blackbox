@@ -211,7 +211,7 @@ class KeyStore():
                 if type(line) is str:
                     uline = line
                 else:
-                    uline = line.decode()
+                    uline = line.decode().rstrip('\n')
                 if add_new_line:
                     out = "{}\n{}".format(out, uline)
                 else:
